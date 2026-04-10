@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "blog": "Blog",
+    "contact": "Contact Us",
+    "appointment": "Free Consultation"
+  },
+  "hero": {
+    "tagline": "Where Justice Meets Innovation",
+    "heading": "Our Attorneys Always Provide Excellent Legal Service",
+    "sub": "Aktay Law Firm delivers high-quality legal counsel tailored to your unique needs — with integrity, precision, and results.",
+    "cta": "Free Consultation",
+    "cta2": "Our Services"
+  },
+  "stats": {
+    "founded": "Founded",
+    "foundedVal": "2004",
+    "cases": "Cases Won",
+    "casesVal": "99%",
+    "areas": "Practice Areas",
+    "areasVal": "9+",
+    "clients": "Happy Clients",
+    "clientsVal": "10K+"
+  },
+  "about": {
+    "label": "About Us",
+    "heading": "A Leading Legal Practice in Cairo Since 2004",
+    "body": "Founded by Ahmed Ibrahim El-Badry, Aktay Law Firm has established itself as a premier provider of legal services in Cairo, Egypt. We combine decades of courtroom experience with modern legal strategies to deliver exceptional outcomes.",
+    "mission": "Our mission is to deliver high-quality legal services while upholding the highest ethical standards — providing personalized attention to every client.",
+    "cta": "Learn More About Us",
+    "val1": "Integrity",
+    "val2": "Excellence",
+    "val3": "Results"
+  },
+  "services": {
+    "label": "Our Services",
+    "heading": "Comprehensive Legal Services",
+    "sub": "We provide tailored legal strategies across a full spectrum of practice areas.",
+    "cta": "View All Services",
+    "s1": "Corporate Law",
+    "s1d": "Business formation, governance, M&A, and commercial contracts.",
+    "s2": "Litigation & Dispute Resolution",
+    "s2d": "Civil litigation, ADR, mediation, arbitration, and appeals.",
+    "s3": "Real Estate Law",
+    "s3d": "Transactions, title issues, land use, and zoning guidance.",
+    "s4": "Family Law",
+    "s4d": "Divorce, custody, child support, and adoption proceedings.",
+    "s5": "Employment Law",
+    "s5d": "Employment contracts, workplace disputes, and compliance.",
+    "s6": "Intellectual Property",
+    "s6d": "Trademark registration, copyright, patents, and licensing.",
+    "s7": "Criminal Law",
+    "s7d": "Defense representation and appeals for criminal charges.",
+    "s8": "Estate Planning",
+    "s8d": "Wills, trusts, probate administration, and power of attorney.",
+    "s9": "Consumer Protection",
+    "s9d": "Fraud, deceptive practices, debt relief, and consumer rights."
+  },
+  "blog": {
+    "label": "Our Blog",
+    "heading": "Legal Insights & News",
+    "sub": "Stay informed with the latest updates in Egyptian and international law.",
+    "readMore": "Read More",
+    "noPosts": "No articles published yet.",
+    "backToBlog": "Back to Blog",
+    "publishedOn": "Published on"
+  },
+  "contact": {
+    "label": "Contact Us",
+    "heading": "Get In Touch",
+    "sub": "Reach out for any legal inquiries or to schedule a consultation.",
+    "name": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "subject": "Subject",
+    "message": "Your Message",
+    "send": "Send Message",
+    "success": "Your message has been sent. We will contact you shortly.",
+    "error": "Something went wrong. Please try again.",
+    "address": "103 Narges 1, New Cairo, Egypt",
+    "tel": "010 000 66 821",
+    "emailAddr": "elbadryleagloffice@yahoo.com",
+    "hours": "Sun – Thu: 9:00 AM – 6:00 PM"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "tagline": "Where Justice Meets Innovation",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Info",
+    "followUs": "Follow Us"
+  }
+}
