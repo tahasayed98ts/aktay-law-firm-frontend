@@ -2,14 +2,34 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import PageLoader from '../../components/ui/PageLoader';
+import FloatingMenu from '../../components/ui/FloatingMenu';
+import { siteConfig } from '../../lib/metadata';
 import '../globals.css';
 
 const locales = ['en', 'ar'];
 
-export const metadata: Metadata = {
-  title: 'Aktay Law Firm — Where Justice Meets Innovation',
-  description: 'Professional legal counsel in Cairo, Egypt. Corporate, litigation, real estate, family law, and more.',
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const isAr = locale === 'ar';
+
+  return {
+    alternates: {
+      canonical:  `${siteConfig.url}/${locale}`,
+      languages: {
+        'en': `${siteConfig.url}/en`,
+        'ar': `${siteConfig.url}/ar`,
+      },
+    },
+    openGraph: {
+      locale: isAr ? 'ar_EG' : 'en_US',
+    },
+  };
+}
 
 export default async function LocaleLayout({
   children,
@@ -23,11 +43,11 @@ export default async function LocaleLayout({
 
   return (
     <div lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+      <PageLoader />
       <Navbar locale={locale} />
-      <main className="max-w-7xl mx-auto px-6">
-        {children}
-      </main>
+      <main>{children}</main>
       <Footer locale={locale} />
+      <FloatingMenu locale={locale} />
     </div>
   );
 }

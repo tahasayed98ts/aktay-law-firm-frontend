@@ -5,7 +5,13 @@ const locales = ['en', 'ar'];
 export default function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  if (pathname.startsWith('/_next') || pathname.startsWith('/api') || pathname.includes('.')) {
+  // Skip Next.js internals, static files, and admin routes
+  if (
+    pathname.startsWith('/_next') ||
+    pathname.startsWith('/api') ||
+    pathname.startsWith('/admin') ||
+    pathname.includes('.')
+  ) {
     return NextResponse.next();
   }
 

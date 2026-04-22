@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { getTranslations } from '../lib/i18n';
 import { localePath } from '../lib/navigation';
+import Flag from 'react-world-flags';
 
 export default function Navbar({ locale }: { locale: string }) {
   const [scrolled, setScrolled] = useState(false);
@@ -32,8 +33,9 @@ export default function Navbar({ locale }: { locale: string }) {
     { href: '/',         label: t('nav.home') },
     { href: '/about',    label: t('nav.about') },
     { href: '/services', label: t('nav.services') },
-    { href: '/blog',     label: t('nav.blog') },
-    { href: '/contact',  label: t('nav.contact') },
+    { href: '/blog', label: t('nav.blog') },
+    { href: '/contact', label: t('nav.contact') },
+    { href: '/join-us',   label: t('nav.joinUs') },
   ];
 
   const isActive = (href: string) => {
@@ -53,8 +55,8 @@ export default function Navbar({ locale }: { locale: string }) {
         <Link href={lp('/')} className="flex items-center gap-3 no-underline">
           <Image src="/logo.png" alt="Aktay" width={44} height={44} className="object-contain" />
           <div>
-            <div className="font-serif text-xl font-bold text-white leading-none">Aktay</div>
-            <div className="font-sans text-[10px] tracking-[0.2em] uppercase text-accent">Law Firm</div>
+            <div className="font-serif text-xl font-bold text-white leading-none">AKTAY</div>
+            <div className="font-sans text-[10px] tracking-[0.4em] uppercase text-accent">Law Firm</div>
           </div>
         </Link>
 
@@ -80,17 +82,90 @@ export default function Navbar({ locale }: { locale: string }) {
         <div className="flex items-center gap-3">
           <button
             onClick={toggleLocale}
-            className="font-sans text-xs font-semibold tracking-widest text-accent border border-accent/40 px-3 py-1.5 bg-transparent hover:bg-accent/10 transition-colors cursor-pointer"
+            title={locale === 'en' ? 'Switch to Arabic' : 'Switch to English'}
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              padding: '4px',
+              borderRadius: '4px',
+              display: 'flex',
+              alignItems: 'center',
+              opacity: 0.85,
+              transition: 'opacity 0.2s',
+            }}
+            onMouseEnter={e => (e.currentTarget.style.opacity = '1')}
+            onMouseLeave={e => (e.currentTarget.style.opacity = '0.85')}
           >
-            {locale === 'en' ? 'ع' : 'EN'}
+            <Flag
+              code={locale === 'en' ? 'EG' : 'US'}
+              style={{ width: '28px', height: '20px', objectFit: 'cover', borderRadius: '3px' }}
+            />
           </button>
 
           <Link
             href={lp('/contact')}
-            className="hidden md:inline-flex items-center gap-2 bg-accent text-dark-deep text-xs font-semibold tracking-widest uppercase px-5 py-2.5 hover:bg-accent-dark transition-colors no-underline"
+            className="hidden md:inline-flex items-center consulting-btn no-underline"
           >
             {t('nav.appointment')}
           </Link>
+
+          <style>{`
+            .consulting-btn {
+              position: relative;
+              padding: 0.6rem 1.4rem;
+              font-family: var(--font-sans);
+              font-size: 0.75rem;
+              font-weight: 600;
+              letter-spacing: 0.12em;
+              text-transform: uppercase;
+              color: white;
+              background: transparent;
+              border-radius: 15px;
+              overflow: hidden;
+              z-index: 0;
+              transition: color 0.3s ease;
+            }
+
+            .consulting-btn::before {
+              content: '';
+              position: absolute;
+              inset: -2px;
+              border-radius: 15px;
+              background: conic-gradient(
+                from var(--angle, 0deg),
+                transparent 0deg,
+                var(--color-accent) 60deg,
+                transparent 120deg
+              );
+              animation: rotate-border 3s linear infinite;
+              z-index: -2;
+            }
+
+            .consulting-btn::after {
+              content: '';
+              position: absolute;
+              inset: 1.5px;
+              border-radius: 13px;
+              background: var(--color-site-dark);
+              z-index: -1;
+            }
+
+            .consulting-btn:hover {
+              color: var(--color-accent);
+              transition: color 0.3s ease;
+            }
+
+            @property --angle {
+              syntax: '<angle>';
+              initial-value: 0deg;
+              inherits: false;
+            }
+
+            @keyframes rotate-border {
+              to { --angle: 360deg; }
+            }
+          `}</style>
 
           {/* Hamburger */}
           <button

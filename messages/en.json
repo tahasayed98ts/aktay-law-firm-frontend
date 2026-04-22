@@ -4,6 +4,7 @@
     "about": "About",
     "services": "Services",
     "blog": "Blog",
+    "joinUs": "Join Us",
     "contact": "Contact Us",
     "appointment": "Free Consultation"
   },
@@ -20,9 +21,11 @@
     "cases": "Cases Won",
     "casesVal": "99%",
     "areas": "Practice Areas",
-    "areasVal": "9+",
+    "areasVal": "100+",
+    "countries": "Countries",
+    "countriesVal": "9+",
     "clients": "Happy Clients",
-    "clientsVal": "10K+"
+    "clientsVal": "30K+"
   },
   "about": {
     "label": "About Us",
@@ -39,7 +42,7 @@
     "heading": "Comprehensive Legal Services",
     "sub": "We provide tailored legal strategies across a full spectrum of practice areas.",
     "cta": "View All Services",
-    "s1": "Corporate Law",
+    "s1": "Commercial Law",
     "s1d": "Business formation, governance, M&A, and commercial contracts.",
     "s2": "Litigation & Dispute Resolution",
     "s2d": "Civil litigation, ADR, mediation, arbitration, and appeals.",
@@ -80,9 +83,9 @@
     "success": "Your message has been sent. We will contact you shortly.",
     "error": "Something went wrong. Please try again.",
     "address": "103 Narges 1, New Cairo, Egypt",
-    "tel": "010 000 66 821",
-    "emailAddr": "elbadryleagloffice@yahoo.com",
-    "hours": "Sun – Thu: 9:00 AM – 6:00 PM"
+    "tel": "011 011 077 88",
+    "emailAddr": "info@aktaylawfirmeg.com",
+    "hours": "Sun – Thu: 9:00 AM – 5:00 PM"
   },
   "footer": {
     "rights": "All rights reserved.",
@@ -90,5 +93,29 @@
     "quickLinks": "Quick Links",
     "contactInfo": "Contact Info",
     "followUs": "Follow Us"
+  },
+  "joinUs": {
+    "label": "Careers",
+    "heading": "Join Our Team",
+    "sub": "We are always looking for talented legal professionals to join Aktay Law Firm.",
+    "name": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "position": "Position Applying For",
+    "message": "Cover Letter / Message",
+    "cv": "Upload CV",
+    "cvHint": "PDF or Word document, max 5MB",
+    "send": "Submit Application",
+    "success": "Your application has been submitted. We will be in touch shortly.",
+    "error": "Something went wrong. Pleasae try again.",
+    "whyUs": "Why Join Aktay Law Firm?",
+    "p1Title": "Professional Growth",
+    "p1Desc": "Work alongside experienced attorneys on complex cases across multiple practice areas.",
+    "p2Title": "Collaborative Culture",
+    "p2Desc": "We foster an environment of teamwork, respect, and continuous learning.",
+    "p3Title": "Meaningful Work",
+    "p3Desc": "Make a real difference in clients' lives through high-quality legal representation.",
+    "p4Title": "Competitive Package",
+    "p4Desc": "We offer competitive compensation and benefits for the right candidates."
   }
 }
