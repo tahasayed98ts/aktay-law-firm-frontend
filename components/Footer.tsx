@@ -106,16 +106,7 @@ export default function Footer({ locale }: { locale: string }) {
         {/* Bottom bar */}
         <div className="border-t border-accent/10 py-5 flex flex-col sm:flex-row justify-between items-center gap-2">
           <p className="text-white/30 text-xs">© {new Date().getFullYear()} Aktay Law Firm. {t('footer.rights')}</p>
-          <a
-            href="https://taha-ts-portfolio.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ fontSize: '0.72rem', color: '#059669', textDecoration: 'none', transition: 'color 0.2s' }}
-            className="footer-powered"
-          >
-            Powered by TS
-          </a>
-          <p className="text-white/30 text-xs">Cairo, Egypt · www.aktaylawfirm.com</p>
+          <p className="text-white/30 text-xs">Cairo, Egypt · www.aktaylawfirmeg.com</p>
         </div>
       </div>
 
