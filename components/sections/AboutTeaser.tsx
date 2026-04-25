@@ -19,7 +19,7 @@ interface Props {
   image?: string;
 }
 
-export default function AboutTeaser({ locale, label, heading, body, mission, values, ctaLabel, ctaHref, experienceLabel, image = '/dar-mez.jpg' }: Props) {
+export default function AboutTeaser({ locale, label, body, mission, values, ctaLabel, ctaHref, experienceLabel, image = '/dar-mez.jpg' }: Props) {
   const isRtl = locale === 'ar';
 
   return (

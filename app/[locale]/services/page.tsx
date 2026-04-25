@@ -424,7 +424,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
 
       <CtaBanner
         heading={locale === 'ar' ? 'هل تحتاج إلى استشارة قانونية؟' : 'Need Legal Guidance?'}
-        sub={locale === 'ar' ? 'تواصل معنا اليوم لجدولة استشارتك المجانية.' : 'Contact us today to schedule your free consultation.'}
+        sub={locale === 'ar' ? 'تواصل معنا اليوم لجدولة استشارتك .' : 'Contact us today to schedule your consultation.'}
         ctaLabel={t('nav.appointment')}
         ctaHref={lp('/contact')}
       />

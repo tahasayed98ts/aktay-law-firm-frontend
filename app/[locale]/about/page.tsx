@@ -287,7 +287,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
       <CtaBanner
         heading={locale === 'ar' ? 'هل تحتاج إلى استشارة قانونية؟' : 'Ready to Work With Us?'}
-        sub={locale === 'ar' ? 'تواصل معنا اليوم لجدولة استشارتك المجانية.' : 'Contact us today to schedule your free consultation.'}
+        sub={locale === 'ar' ? 'تواصل معنا اليوم لجدولة استشارتك.' : 'Contact us today to schedule your consultation.'}
         ctaLabel={t('nav.appointment')}
         ctaHref={lp('/contact')}
       />

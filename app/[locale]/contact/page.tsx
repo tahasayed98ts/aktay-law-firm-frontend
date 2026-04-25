@@ -31,7 +31,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   const content = await getPageContent();
   const p       = (key: string, fallback: string) => pick(content, key, locale, fallback);
 
-  const MAPS_URL = 'https://www.google.com/maps/place/30%C2%B001%2730.8%22N+31%C2%B027%2728.5%22E/@30.0252132,31.4553433,743m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d30.0252132!4d31.4579182';
+  const MAPS_URL = 'https://www.google.com/maps/dir/30.138857,31.391256/Aktay+lawfirm,+Villa+103+S+Teseen,+street,+New+Cairo+1,+Cairo+Governorate+11835/@30.0236723,31.4552826,1018m/data=!3m1!1e3!4m10!4m9!1m1!4e1!1m5!1m1!1s0x14583d3ed208bd9d:0xa4f7a22aa27e92a9!2m2!1d31.4579998!2d30.0250551!3e0?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D';
 
   const address = p('contact.info.address', t('contact.address'));
   const phone   = p('contact.info.phone',   t('contact.tel'));
@@ -152,6 +152,38 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                     </div>
                     <div style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9rem', color: 'rgba(255,255,255,0.85)' }}>
                       {phone}
+                    </div>
+                  </div>
+                </a>
+
+                {/* Landline */}
+                <a
+                  href="tel:+20223131431"
+                  className="contact-item"
+                  style={{
+                    display: 'flex', gap: '1rem', alignItems: 'center',
+                    padding: '1.25rem',
+                    background: 'var(--color-site-card)',
+                    border: '1px solid rgba(233,206,139,0.1)',
+                    borderRadius: '6px', textDecoration: 'none',
+                    transition: 'border-color 0.2s',
+                  }}
+                >
+                  <div style={{
+                    width: '44px', height: '44px', flexShrink: 0,
+                    background: 'rgba(233,206,139,0.08)',
+                    border: '1px solid rgba(233,206,139,0.12)',
+                    borderRadius: '8px',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  }}>
+                    <Phone size={18} color="var(--color-accent)" strokeWidth={1.5} />
+                  </div>
+                  <div>
+                    <div style={{ fontFamily: 'var(--font-sans)', fontSize: '0.68rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--color-accent)', marginBottom: '4px', fontWeight: 700 }}>
+                      {locale === 'ar' ? 'الهاتف الأرضي' : 'Landline'}
+                    </div>
+                    <div style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9rem', color: 'rgba(255,255,255,0.85)' }}>
+                      {locale === 'ar' ? '431 31 31 022' : '022 31 31 431'}
                     </div>
                   </div>
                 </a>

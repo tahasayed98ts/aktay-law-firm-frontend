@@ -6,6 +6,8 @@ import StatsSection   from '../../components/sections/StatsSection';
 import AboutTeaser    from '../../components/sections/AboutTeaser';
 import ServicesGrid   from '../../components/sections/ServicesGrid';
 import CtaBanner from '../../components/sections/CtaBanner';
+import ClientsMarquee from '../../components/sections/ClientsMarquee';
+
 
 import type { Metadata } from 'next';
 import { siteConfig } from '../../lib/metadata';
@@ -88,6 +90,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         image={pickImage(content, 'image.about.teaser', '/dar-mez.jpg')}
       />
 
+      <ClientsMarquee locale={locale} />
+
       <ServicesGrid
         label={p('home.services.label',     t('services.label'))}
         heading={p('home.services.heading', t('services.heading'))}
@@ -113,8 +117,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           : 'Need Legal Guidance?'
         )}
         sub={p('home.cta.sub', locale === 'ar'
-          ? 'تواصل معنا اليوم لجدولة استشارتك المجانية.'
-          : 'Contact us today to schedule your free consultation.'
+          ? 'تواصل معنا اليوم لجدولة استشارتك.'
+          : 'Contact us today to schedule your consultation.'
         )}
         ctaLabel={p('nav.appointment', t('nav.appointment'))}
         ctaHref={lp('/contact')}

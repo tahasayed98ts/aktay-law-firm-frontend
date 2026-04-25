@@ -53,7 +53,7 @@ export default function HeroSection({
           <SectionLabel>{tagline}</SectionLabel>
           <h1 style={{
             fontFamily: 'var(--font-serif)',
-            fontSize: 'clamp(2.8rem, 5.5vw, 3.2rem)',
+            fontSize: 'clamp(2.3rem, 5.5vw, 3.2rem)',
             fontWeight: 600,
             color: 'white',
             lineHeight: 1.15,

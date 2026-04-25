@@ -178,7 +178,7 @@ export default async function BlogDetailPage({
                   textTransform: 'uppercase', color: 'var(--color-accent)',
                   marginBottom: '1.25rem',
                 }}>
-                  {locale === 'ar' ? 'استشارة مجانية' : 'Free Consultation'}
+                  {locale === 'ar' ? 'للاستشــــــارات' : 'For Consultation'}
                 </h4>
                 <p style={{
                   fontFamily: 'var(--font-sans)', fontSize: '0.88rem',
@@ -320,7 +320,7 @@ export default async function BlogDetailPage({
 
       <CtaBanner
         heading={locale === 'ar' ? 'هل تحتاج إلى استشارة قانونية؟' : 'Need Legal Guidance?'}
-        sub={locale === 'ar' ? 'تواصل معنا اليوم.' : 'Contact us today to schedule your free consultation.'}
+        sub={locale === 'ar' ? 'تواصل معنا اليوم.' : 'Contact us today to schedule your consultation.'}
         ctaLabel={t('nav.appointment')}
         ctaHref={lp('/contact')}
       />
