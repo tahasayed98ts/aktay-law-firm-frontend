@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
-import { FaFacebookF,  FaInstagram, FaYoutube } from 'react-icons/fa6';
+import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn, FaTiktok } from 'react-icons/fa6';
 import { getTranslations } from '../lib/i18n';
 import { localePath } from '../lib/navigation';
 
@@ -29,12 +29,13 @@ export default function Footer({ locale }: { locale: string }) {
     { icon: <Clock  size={15} strokeWidth={1.5} />, text: t('contact.hours') },
   ];
 
-  const socials = [
-    { icon: <FaFacebookF  size={14} />, href: 'https://www.facebook.com/share/1E3TakzbZv/?mibextid=wwXIfr' },
-    
-    { icon: <FaInstagram  size={14} />, href: 'https://www.instagram.com/aktay.law.firm?igsh=am5wMTBwb3FiODB4' },
-    { icon: <FaYoutube   size={14} />, href: 'https://youtube.com/@aktaylawfirm?si=T4lbw0_YGuUDnIie' },
-  ];
+ const socials = [
+  { icon: <FaFacebookF  size={14} />, href: 'https://www.facebook.com/share/1E3TakzbZv/?mibextid=wwXIfr' },
+  { icon: <FaInstagram  size={14} />, href: 'https://www.instagram.com/aktay.law.firm?igsh=am5wMTBwb3FiODB4' },
+  { icon: <FaYoutube    size={14} />, href: 'https://www.youtube.com/@AktayLawFirm76' },
+  { icon: <FaLinkedinIn size={14} />, href: 'https://www.linkedin.com/in/ahmed-ibrahim-el-badry-78064a406' },
+  { icon: <FaTiktok     size={14} />, href: 'https://www.tiktok.com/@aktay.law.firm' },
+];
 
   const headingStyle: React.CSSProperties = {
     fontFamily: 'var(--font-serif)',
