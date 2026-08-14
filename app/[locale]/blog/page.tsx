@@ -19,20 +19,29 @@ interface Post {
   coverImage: string;
 }
 
-async function getPosts() {
+interface Pagination {
+  page:  number;
+  limit: number;
+  total: number;
+  pages: number;
+}
+
+const POSTS_PER_PAGE = 12;
+
+async function getPosts(page: number) {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/posts?limit=12`,
+      `${process.env.NEXT_PUBLIC_API_URL}/posts?page=${page}&limit=${POSTS_PER_PAGE}`,
       {
         next: { revalidate: 60 },
         signal: AbortSignal.timeout(5000),
       }
     );
-    if (!res.ok) return [];
+    if (!res.ok) return { posts: [] as Post[], pagination: null as Pagination | null };
     const data = await res.json();
-    return data.posts as Post[];
+    return { posts: data.posts as Post[], pagination: data.pagination as Pagination };
   } catch {
-    return [];
+    return { posts: [] as Post[], pagination: null as Pagination | null };
   }
 }
 
@@ -52,11 +61,20 @@ export async function generateMetadata({
   };
 }
 
-export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function BlogPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ locale: string }>;
+  searchParams: Promise<{ page?: string }>;
+}) {
   const { locale } = await params;
+  const { page: pageParam } = await searchParams;
+  const currentPage = Math.max(1, parseInt(pageParam || '1', 10) || 1);
+
   const t       = getTranslations(locale);
   const lp      = (path: string) => localePath(locale, path);
-  const posts   = await getPosts();
+  const { posts, pagination } = await getPosts(currentPage);
   const isRtl   = locale === 'ar';
   const content = await getPageContent();
   const p       = (key: string, fallback: string) => pick(content, key, locale, fallback);
@@ -193,6 +211,39 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
                 );
               })}
             </div>
+          )}
+
+          {pagination && pagination.pages > 1 && (
+            <nav
+              aria-label="Pagination"
+              style={{
+                display: 'flex', justifyContent: 'center', alignItems: 'center',
+                gap: '0.5rem', marginTop: '4rem', flexWrap: 'wrap',
+              }}
+            >
+              {Array.from({ length: pagination.pages }, (_, i) => i + 1).map((n) => {
+                const isActive = n === currentPage;
+                const href = n === 1 ? lp('/blog') : lp(`/blog?page=${n}`);
+                return (
+                  <Link
+                    key={n}
+                    href={href}
+                    aria-current={isActive ? 'page' : undefined}
+                    style={{
+                      display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                      minWidth: '2.5rem', height: '2.5rem', padding: '0 0.5rem',
+                      fontFamily: 'var(--font-sans)', fontSize: '0.85rem', fontWeight: 600,
+                      color: isActive ? 'var(--color-site-dark)' : 'rgba(255,255,255,0.6)',
+                      background: isActive ? 'var(--color-accent)' : 'transparent',
+                      border: '1px solid rgba(233,206,139,0.2)',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    {n}
+                  </Link>
+                );
+              })}
+            </nav>
           )}
         </div>
         <style>{`
